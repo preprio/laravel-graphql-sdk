@@ -25,26 +25,33 @@ config/services.php
 PREPR_ENDPOINT=https://graphql.prepr.io/7f05e9e2f17f1b3d5e08dab3a565acbea8b87745473917e159f70ae1cf0334b9
 ```
 
-Option with query file (create file in app/Queries with .graphql extension)
+## Query the API
 
+Option with query file (create file in app/Queries with .graphql extension):
+
+```
 $response = Http::prepr([
     'query' => 'name-of-the-file',
     'variables' => [
         'id' => 123,
     ]
 ]);
+```
 
-Option without a query file
+Option without a query file:
 
+```
 $response = Http::prepr([
     'raw-query' => 'query here',
     'variables' => [
         'id' => 123,
     ]
 ]);
+```
 
 Option with headers
 
+```
 $response = Http::prepr([
     'query' => 'name-of-the-file',
     'variables' => [
@@ -54,3 +61,4 @@ $response = Http::prepr([
         'Prepr-Customer-Id' => request()->get('customer_id',request()->session()->getId())
     ]
 ]);
+```
