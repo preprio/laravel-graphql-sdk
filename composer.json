@@ -1,0 +1,28 @@
+{
+  "name": "preprio/laravel-graphql-sdk",
+  "description": "Prepr GraphQL wrapper for Laravel",
+  "keywords": ["laravel", "prepr"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Prepr",
+      "email": "support@prepr.io"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "Preprio\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Preprio\\PreprServiceProvider"
+      ]
+    }
+  }
+}
