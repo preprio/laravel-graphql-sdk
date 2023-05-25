@@ -22,7 +22,7 @@ config/services.php
 .env
 
 ```
-PREPR_ENDPOINT=https://graphql.prepr.io/{YOUR_API_ENDPOINT}
+PREPR_ENDPOINT={YOUR_API_ENDPOINT}
 ```
 
 ## Query the API
