@@ -15,7 +15,9 @@ Added config in you're .env file and config/services.php
 config/services.php
 
     'prepr' => [
-        'endpoint' => env('PREPR_ENDPOINT')
+        'endpoint' => env('PREPR_ENDPOINT'),
+        'timeout' => env('PREPR_TIMEOUT'),
+        'connect_timeout' => env('PREPR_CONNECT_TIMEOUT')
     ]
 ```
 
