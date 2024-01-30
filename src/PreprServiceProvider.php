@@ -39,7 +39,11 @@ class PreprServiceProvider extends ServiceProvider
                 $json['variables'] = data_get($data,'variables');
             }
 
-            return Http::acceptJson()->withHeaders($headers)->post(config('services.prepr.endpoint'), $json);
+            return Http::acceptJson()
+                ->timeout(config('services.prepr.timeout',30))
+                ->connectTimeout(config('services.prepr.connect_timeout',10))
+                ->withHeaders($headers)
+                ->post(config('services.prepr.endpoint'), $json);
 
         });
     }
