@@ -21,7 +21,7 @@ class PreprServiceProvider extends ServiceProvider
             }
 
             if (\Request()->hasHeader('x-real-ip')) {
-                data_set($headers, 'Prepr-Client-IP', \Request()->header('x-real-ip'));
+                data_set($headers, 'Prepr-Visitor-IP', \Request()->header('x-real-ip'));
             }
 
             $json = [
