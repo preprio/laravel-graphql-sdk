@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## 1.1.2
 
 ### Changed
 - Prefer `CF-Connecting-IP` over `X-Real-IP` when determining the visitor IP.
