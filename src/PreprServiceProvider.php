@@ -20,8 +20,12 @@ class PreprServiceProvider extends ServiceProvider
                 $headers = data_get($data,'headers');
             }
 
-            if (\Request()->hasHeader('x-real-ip')) {
-                data_set($headers, 'Prepr-Visitor-IP', \Request()->header('x-real-ip'));
+            if (\Request()->hasHeader('CF-Connecting-IP')) {
+                data_set($headers, 'Prepr-Visitor-IP', \Request()->header('CF-Connecting-IP'));
+            } else {
+                if (\Request()->hasHeader('x-real-ip')) {
+                    data_set($headers, 'Prepr-Visitor-IP', \Request()->header('x-real-ip'));
+                }
             }
 
             $json = [
